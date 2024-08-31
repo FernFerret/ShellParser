@@ -5,12 +5,18 @@
     <artifactId>ShellParser</artifactId>
     <version>1.0</version>
     <name>ShellParser</name>
-    <description>Shell string parser/seperator for Java.</description>
+    <description>Shell string parser/separator for Java.</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
     </properties>
     <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
         <repository>
             <id>OnARandomBox</id>
             <url>http://repo.onarandombox.com/artifactory/repo</url>
@@ -23,10 +29,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.8.1</version> <!-- Use a more recent version -->
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
             <!-- Jar Plugin -->
@@ -46,10 +52,10 @@
     <dependencies>
         <!-- JUnit Dependency -->
         <dependency>
-            <groupId>org.junit</groupId>
+            <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
-        <!-- JUnit Dependency -->
     </dependencies>
 </project>
